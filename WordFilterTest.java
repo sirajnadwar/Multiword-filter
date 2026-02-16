@@ -19,7 +19,7 @@ public class WordFilterTest {
 
         assertEq(
             wf.filter(FilterQuery.of(null, null, "and", null, null, false, 10)),
-            Arrays.asList("band", "Bandana", "candy"),
+            Arrays.asList("band", "Bandana", "Candle", "candy"),
             "contains=and, caseInsensitive"
         );
 
