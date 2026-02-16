@@ -19,14 +19,14 @@ public class WordFilterTest {
 
         assertEq(
             wf.filter(FilterQuery.of(null, null, "and", null, null, false, 10)),
-            Arrays.asList("band", "Bandana", "candy"),
+            Arrays.asList("band", "Bandana", "Candle", "candy"),
             "contains=and, caseInsensitive"
         );
 
         assertEq(
             wf.filter(FilterQuery.of("ca", null, null, 3, 5, false, 10)),
-            Arrays.asList("can", "cap", "cape", "candy", "Candle", "caption"),
-            "prefix=ca, len range 3..5, caseInsensitive (note: caption excluded by maxLen=5, so should not appear)"
+            Arrays.asList("can", "candy", "cap", "cape"),
+            "prefix=ca, len range 3..5, caseInsensitive"
         );
 
         assertEq(
